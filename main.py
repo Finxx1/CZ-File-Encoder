@@ -1,10 +1,11 @@
 from compiler.compiler import compile
 from decompiler.decompiler import decompile
+from BugCheck.BugChecker import check
 
 choice = ' '
 
 def start():
-	print('compile or decompile?')
+	print('compile, decompile or bugcheck')
 	choice = input()
 	if choice == 'compile':
 		compile()
@@ -12,5 +13,8 @@ def start():
 		if choice == 'decompile':
 			decompile()
 		else:
-			start()
+			if choice == 'bugcheck':
+				check()
+			else:
+				start()
 start()
